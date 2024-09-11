@@ -1,0 +1,17 @@
+<h1> Add New Employee </h1>
+<%= form_with(model: @employee, local: true) do |f|%>
+
+<p><%= f.label :name %>
+<%= f.text_field :name%>
+
+<p><%= f.label :role%>
+<%= f.text_field :role%>
+
+<p><%= f.label :manager_id%>
+<%= f.select :manager_id, Manager.all.collect { |m| [m.name, m.id] } , { include_blank: true } %>
+<div>
+<%= f.submit 'Create Employee' %>
+</div>
+<%end%>
+
+<%= link_to 'back', employees_path%>

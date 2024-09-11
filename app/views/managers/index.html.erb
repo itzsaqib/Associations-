@@ -1,0 +1,20 @@
+<h1> Managers </h1>
+
+
+<div class="new-manager">
+  <%= link_to 'New Manager', new_manager_path, class: 'btn btn-success' %>
+</div>
+
+<% @managers.each do |manager| %>
+  <div class="manager-card">
+    <p><strong>NAME:</strong> <%= manager.name %></p>
+    <div class="manager-actions">
+      <%= link_to 'Show', manager_path(manager), class: 'btn btn-primary' %>
+      <%= link_to 'Edit', edit_manager_path(manager), class: 'btn btn-warning' %>
+      <%= button_to 'Delete', manager_path(manager), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>
+
+
+<%= paginate @managers %>

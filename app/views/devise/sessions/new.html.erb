@@ -1,0 +1,22 @@
+<div class="devise-container">
+  <h2 class="devise-header">Sign In</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "devise-form"}) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, class: "form-label" %><br>
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, class: "form-label" %><br>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= f.submit "Log in", class: "devise-button" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="sharedlink">
+  <%= render "devise/shared/links" %>
+</div>

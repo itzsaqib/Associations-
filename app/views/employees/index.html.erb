@@ -1,0 +1,32 @@
+<h1>Employees</h1>
+<div class="search-container">
+  <%= search_form_for @q do |f| %>
+    <div class="search-input-wrapper">
+      <%= f.search_field :name_cont, placeholder: "Search by Name", class: "search-input" %>
+    
+    <%= f.submit "Search", class: "search-button" %>
+  </div>
+  <% end %>
+</div>
+
+<div class="new-employee">
+  <%= link_to 'New Employee', new_employee_path, class: 'btn-success' %>
+</div>
+
+<% @employees.each do |employee| %>
+  <div class="employee-list">
+    <p><strong>Name:</strong> <%= employee.name %></p>
+    <p><strong>Role:</strong> <%= employee.role %></p>
+    <p><strong>Manager:</strong> <%= employee.manager&.name %></p>
+
+    <div class="actions">
+      <%= link_to 'Show', employee, class: 'btn btn-primary' %>
+      <%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-warning' %>
+      <%= button_to 'Delete', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>
+
+
+
+<%= paginate @employees %> <!-- Render pagination links -->

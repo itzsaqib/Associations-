@@ -1,0 +1,71 @@
+/* General Styling */
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(148, 153, 155);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* New Manager Button */
+  .new-manager {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .new-manager .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .new-manager .btn-success {
+    background-color: #28a745;
+  }
+  
+  /* Manager Card */
+/* Center the Manager Card */
+.manager-card {
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto; /* Center the card horizontally */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Add transition for hover effect */
+  }
+  
+  /* Hover Effect on Manager Card */
+  .manager-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-10px); /* Slight lift on hover */
+    border: 2px solid lightblue;
+  }
+  
+  /* Manager Actions */
+  .manager-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .manager-actions .btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .manager-actions .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .manager-actions .btn-warning {
+    background-color: #f7b900;
+    color: #333;
+  }
+  
+  .manager-actions .btn-danger {
+    background-color: #dc3545;
+  }  
