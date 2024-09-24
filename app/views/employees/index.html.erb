@@ -24,11 +24,11 @@
       <%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-warning' %>
       <%= button_to 'Delete', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     </div>
-  </div>
- 
+    
+  </div> 
+
 <% end %>
 <%= paginate @employees %> <!-- Render pagination links -->
 <%= line_chart @employees.group_by_day(:created_at).count %>
-
 <%= pie_chart @employees.group(:role).count %>
 
